@@ -5,12 +5,24 @@ This is a minimalistic library based on <a href="https://github.com/marytts/mary
 ```scala
 package org.nicocavallo
 
+import java.util.concurrent.Executors
+
+import scala.concurrent.ExecutionContext
+
 object PrudenceApp extends App {
+
+  val executor = Executors.newSingleThreadExecutor()
+
+  implicit val ec: ExecutionContext = ExecutionContext
+    .fromExecutor(executor)
+
   val text = args.headOption
-  text.fold(System.err.println("Missing text. Try again")){ t =>
-    Prudence.speak(t)
+  text.fold(System.err.println("Missing text. Try again")) { t =>
+    Prudence.speak(t.trim())
   }
-  Prudence.shutdown()
+
+  executor.shutdown()
+
 }
 ```
 ### Run
@@ -37,10 +49,17 @@ Then use it as any other library
 ```scala
 import org.nicocavallo.Prudence
 
+import java.util.concurrent.Executors
+
+import scala.concurrent.ExecutionContext
+
 object TryIt extends App {
 
-  Prudence.speak("Hello!")
-  Prudence.shutdown()
+  val executor = Executors.newSingleThreadExecutor()
+  
+  Prudence.speak( "Hello!" )( ExecutionContext.fromExecutor(executor) )
+  
+  executor.shutdown()
 
 }
 ```
