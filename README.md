@@ -1,4 +1,5 @@
 # Simple Text-to-Speech for Scala
+This is a minimalistic library based on [MaryTTS](https://github.com/marytts/marytts). Its aim is to simplify text to speech interfaces for some of my projects.
 
 ### Code example
 ```scala
