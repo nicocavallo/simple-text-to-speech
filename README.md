@@ -15,7 +15,7 @@ object PrudenceApp extends App {
 ```bash
 suknca@suknca MINGW64 /c/repo/simple-text-2-speech (master)
 $ sbt "run \"Hello Nico\""
-[warn] [0mExecuting in batch mode.
+[warn]   Executing in batch mode.
 [warn]   For better performance, hit [ENTER] to switch to interactive mode, or
 [warn]   consider launching sbt without any commands, or explicitly passing 'shell'
 [info] Loading global plugins from C:\Users\suknca\.sbt\0.13\plugins
