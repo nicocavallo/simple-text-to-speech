@@ -1,4 +1,5 @@
 # Simple Text-to-Speech for Scala
+
 ### Code example
 ```scala
 package org.nicocavallo
@@ -23,4 +24,22 @@ $ sbt "run \"Hello Nico\""
 [info] Set current project to text-2-speech (in build file:/C:/repo/text-2-speech/)
 [info] Running org.nicocavallo.PrudenceApp Hello Nico
 [success] Total time: 5 s, completed 30-May-2017 11:05:08
+```
+### Include it in your sbt projects:
+Include this lines in your project's build.sbt
+```sbt
+resolvers += "jitpack" at "https://jitpack.io"
+libraryDependencies += "com.github.nicocavallo" %% "simple-text-to-speech" % "master-SNAPSHOT"
+```
+Then use it as any other library
+
+```scala
+import org.nicocavallo.Prudence
+
+object TryIt extends App {
+
+  Prudence.speak("Hello!")
+  Prudence.shutdown()
+
+}
 ```
