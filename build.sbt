@@ -19,4 +19,6 @@ libraryDependencies += "de.dfki.mary" % "voice-dfki-prudence-hsmm" % "5.2"
 
 javaOptions += "-Djavax.xml.transform.TransformerFactory=com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl"
 
+crossScalaVersions := Seq("2.11", "2.12")
+
 fork in run := true
