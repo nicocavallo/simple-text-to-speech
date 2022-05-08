@@ -2,12 +2,11 @@ name := "text-2-speech"
 
 version := "1.0"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.15"
 
 val freettsVersion = "1.2.2"
 
-resolvers +=
-  "Bintray MaryTTS" at "https://jcenter.bintray.com/"
+resolvers += "Gradle plugins" at "https://repo.gradle.org/libs-releases/"
 
 libraryDependencies += "de.dfki.mary" % "voice-dfki-prudence-hsmm" % "5.2"
 
@@ -15,4 +14,6 @@ javaOptions += "-Djavax.xml.transform.TransformerFactory=com.sun.org.apache.xala
 
 crossScalaVersions := Seq("2.11", "2.12")
 
-fork in run := true
+useCoursier := false
+
+run / fork := true
